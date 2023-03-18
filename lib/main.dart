@@ -55,7 +55,6 @@ class _QuizPageState extends State<QuizPage> {
           desc: 'You\'ve reached the end of the quiz.',
         ).show();
 
-        //TODO Step 4 Part C - reset the questionNumber,
         quizBrain.reset();
 
         //TODO Step 4 Part D - empty out the scoreKeeper.
@@ -133,15 +132,6 @@ class _QuizPageState extends State<QuizPage> {
               ),
               onPressed: () {
                 checkedAnswer(true);
-                setState(() {
-                  questionNumber++;
-                  scorekeeper.add(
-                    Icon(
-                      Icons.check_box,
-                      color: Colors.green,
-                    ),
-                  );
-                });
               },
               child: Text(
                 'TRUE',
@@ -158,15 +148,6 @@ class _QuizPageState extends State<QuizPage> {
               ),
               onPressed: () {
                 checkedAnswer(false);
-                setState(() {
-                  questionNumber++;
-                  scorekeeper.add(
-                    Icon(
-                      Icons.close_sharp,
-                      color: Colors.red,
-                    ),
-                  );
-                });
               },
               child: Text('FALSE'),
             ),
